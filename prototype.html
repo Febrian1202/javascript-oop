@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype</title>
+</head>
+
+<body>
+    <script>
+        // Prototype
+        function Person(firstName, lastName) {
+            (this.firstName = firstName),
+                (this.lastName = lastName),
+                // Method di constructor function
+                (this.sayHello = function (name) {
+                    console.info(`Hello ${name} my name is ${this.firstName}`);
+                });
+        }
+
+        // Tersimpan di Prototype Object
+        Person.prototype.sayBye = function () {
+            console.info("Good Bye")
+        }
+
+        // Tersimpan di Prototype Object
+        Person.prototype.run = function () {
+            console.info(`${this.firstName} is running`)
+        }
+
+        const febri = new Person("Muhammad", "Febrian");
+        febri.sayHello("Joko");
+        febri.sayBye();
+        febri.run();
+
+        const eko = new Person("Eko", "Khannedy");
+        eko.sayHello("Joko");
+        eko.sayBye();
+        eko.run();
+
+        console.log(febri);
+        console.log(eko);
+    </script>
+</body>
+
+</html>
