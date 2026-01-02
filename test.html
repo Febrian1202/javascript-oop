@@ -9,35 +9,32 @@
 
 <body>
     <script>
-        class Employee {
+        class Counter {
 
-            constructor(firstName) {
-                this.firstName = firstName
+            // Private class field
+            #counter = 0
+
+            increment() {
+                this.#counter++
             }
 
-            sayHello(name) {
-                console.info(`Hello ${name}, my name is employee ${this.firstName}`);
+            decrement() {
+                this.#counter--
             }
+
+            get() {
+                return this.#counter
+            }
+
         }
 
-        class Manager extends Employee {
-            constructor(firstName, lastName) {
-                super(firstName)
-                this.lastName = lastName
-            }
-            sayHello(name) {
-                console.info(`Hello ${name}, my name is manager ${this.firstName} ${this.lastName}`);
-            }
-        }
-
-        const budi = new Employee("Budi")
-        budi.sayHello('Joko')
-
-        const eko = new Manager("Eko", "Kurniawan")
-        eko.sayHello('Joko')
-
-        console.info(budi)
-        console.info(eko)
+        const counter = new Counter()
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        counter.increment();
+        console.info(counter.get())
     </script>
 </body>
 
