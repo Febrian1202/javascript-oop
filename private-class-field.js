@@ -23,4 +23,7 @@ counter.increment();
 counter.increment();
 counter.increment();
 counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
 console.info(counter.get())

@@ -9,32 +9,16 @@
 
 <body>
     <script>
-        class Counter {
+        class Configuration {
 
-            // Private class field
-            #counter = 0
-
-            increment() {
-                this.#counter++
-            }
-
-            decrement() {
-                this.#counter--
-            }
-
-            get() {
-                return this.#counter
-            }
+            static name = "Belajar JavaScript OOP"
+            static version = 1.0
+            static author = "M. Febrian Syah"
 
         }
 
-        const counter = new Counter()
-        counter.increment();
-        counter.increment();
-        counter.increment();
-        counter.increment();
-        counter.increment();
-        console.info(counter.get())
+        const config = new Configuration();
+        console.info(config)
     </script>
 </body>
 
