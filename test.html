@@ -9,16 +9,32 @@
 
 <body>
     <script>
-        class Configuration {
-
-            static name = "Belajar JavaScript OOP"
-            static version = 1.0
-            static author = "M. Febrian Syah"
-
+        class MathUtil {
+            static sum(...numbers) {
+                if (numbers.length === 0) {
+                    // const error = new Error("Total parameter harus lebih dari 0")
+                    // throw error
+                    throw new Error("Total parameter harus lebih dari 0")
+                }
+                let total = 0;
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
         }
 
-        const config = new Configuration();
-        console.info(config)
+        try {
+            console.info(MathUtil.sum(1, 2, 3, 4, 5, 6))
+            console.info("Febri")
+        } catch (error) {
+            console.info(`Terjadi error : ${error.message}`)
+        } finally {
+            console.info("Kode Program Selesai")
+        }
+
+        console.info("Syah")
+
     </script>
 </body>
 
